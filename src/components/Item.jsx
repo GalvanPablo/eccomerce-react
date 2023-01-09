@@ -9,7 +9,7 @@ function Item({imagen, nombre, descripcion, precio}) {
             <div className="p-5 flex-col gap-3">
                 <a href="#detalleProducto">
                     <h3 className="font-semibold text-xl overflow-ellipsis overflow-hidden whitespace-nowrap">
-                        {nombre}
+                        {nombre.toUpperCase()}
                     </h3>
                     <p className="text-sm opacity-50">
                         {descripcion}

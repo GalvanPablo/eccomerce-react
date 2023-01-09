@@ -8,7 +8,7 @@ import ItemList from './ItemList'
 
 const productos = JSON.stringify([
     {nombre:"FREI CHAIN TWS", descripcion:"descripción", precio:"180", imagen:"https://i.imgur.com/BQdIOp7.png"},
-    {nombre:"vertrag-bt-home-cinema", descripcion:"descripción", precio:"180", imagen:"https://i.imgur.com/WLeyFck.png"},
+    {nombre:"vertrag bt home cinema", descripcion:"descripción", precio:"180", imagen:"https://i.imgur.com/WLeyFck.png"},
     {nombre:"dunn", descripcion:"descripción", precio:"180", imagen:"https://i.imgur.com/oMRxNEa.png"},
 ])
 
