@@ -3,7 +3,7 @@
         "id" : 1,
         "nombre" : "frei chain tws",
         "descripcion" : "Parlante bluetooth portable con tecnologia TWS que permite conectar hasta 2 en simultaneo para un audio estereo",
-        "categoria" : "Parlantes",
+        "categoria" : "parlantes",
         "precio" : 28499,
         "imagenes" : [
             "https://i.imgur.com/BQdIOp7.png",
@@ -15,7 +15,7 @@
         "id" : 2,
         "nombre" : "duett tws",
         "descripcion" : "Ideales para tus reuniones con amigos y para llevarlos donde quieras, ya que poseen una duración de la batería de 8 horas.",
-        "categoria" : "Parlantes",
+        "categoria" : "parlantes",
         "precio" : 12599,
         "imagenes" : [
             "https://i.imgur.com/QlkWozg.png",
@@ -28,7 +28,7 @@
         "id" : 3,
         "nombre" : "vertrag home cinema",
         "descripcion" : "Con VERTRAG BT HOME CINEMA ™ nunca fue tan fácil disfrutar de tu música. Gracias a su conectividad Bluetooth® y óptica, este compacto sistema 2.0 permite llenar cualquier espacio con un sonido de gran pureza. Con su diseño moderno y de líneas simples, es el perfecto aliado para cualquier habitación y también para tu Smart TV.",
-        "categoria" : "Minicomponentes",
+        "categoria" : "minicomponentes",
         "precio" : 104999,
         "imagenes" : [
             "https://i.imgur.com/WLeyFck.png",
@@ -40,7 +40,7 @@
         "id" : 4,
         "nombre" : "dunn",
         "descripcion" : "DUNN es una barra de sonido que convierte a su televisor en un sistema completo de entretenimiento. Coloque el subwoofer inalámbrico en cualquier lugar de la habitación y sienta el poderoso efecto envolvente de sus graves.",
-        "categoria" : "Home Theaters",
+        "categoria" : "home-theaters",
         "precio" : 110499,
         "imagenes" : [
             "https://i.imgur.com/oMRxNEa.png",
@@ -53,7 +53,7 @@
         "id" : 5,
         "nombre" : "rein",
         "descripcion" : "Compacta y de diseño minimalista, el equipo está formado por una barra de tres canales, dos parlantes satelitales y un poderoso subwoofer.",
-        "categoria" : "Home Theaters",
+        "categoria" : "home-theaters",
         "precio" : 189999,
         "imagenes" : [
             "https://i.imgur.com/zQK8mvG.png",
@@ -66,7 +66,7 @@
         "id" : 6,
         "nombre" : "kino",
         "descripcion" : "Con el NUEVO sistema de sonido 2.1 Kino, convertí tu Smart TV en un completo sistema de entretenimiento.",
-        "categoria" : "Home Theaters",
+        "categoria" : "home-theaters",
         "precio" : 140000 ,
         "imagenes" : [
             "https://i.imgur.com/dRFJyL6.png",
@@ -79,7 +79,7 @@
         "id" : 7,
         "nombre" : "spiel cinema",
         "descripcion" : "El NUEVO Spiel Cinema es un sistema de sonido 2.1 con excelente versatilidad.",
-        "categoria" : "Home Theaters",
+        "categoria" : "home-theaters",
         "precio" : 46799,
         "imagenes" : [
             "https://i.imgur.com/q44ykRr.png",
@@ -90,8 +90,8 @@
     {
         "id" : 8,
         "nombre" : "bohne topp",
-        "descripcion" : "Disfrutá de 6 horas ininterrumpidas de música con tus NUEVOS auriculares in ear BOHNE TOPP.",
-        "categoria" : "Auriculares",
+        "descripcion" : "Disfrutá de 6 horas ininterrumpidas de música con tus NUEVOS headsets in ear BOHNE TOPP.",
+        "categoria" : "headsets",
         "precio" : 19999,
         "imagenes" : [
             "https://i.imgur.com/Dk5EiaG.png",
@@ -103,8 +103,8 @@
     {
         "id" : 9,
         "nombre" : "dauer",
-        "descripcion" : "Con los nuevos auriculares inalámbricos Bluetooth Dauer, podés disfrutar tu música por 30 horas, gracias a la larga duración de su batería.",
-        "categoria" : "Auriculares",
+        "descripcion" : "Con los nuevos headsets inalámbricos Bluetooth Dauer, podés disfrutar tu música por 30 horas, gracias a la larga duración de su batería.",
+        "categoria" : "headsets",
         "precio" : 17990,
         "imagenes" : [
             "https://i.imgur.com/nB9FvSO.png",
@@ -116,7 +116,7 @@
         "id" : 10,
         "nombre" : "VX75",
         "descripcion" : "Sonido claro y potente. Bajos inmersivos. Diseño ergonómico y confortable. Micrófono flexible y ajustable. Incluyen control remoto para volumen y silencio de micrófono.",
-        "categoria" : "Auriculares",
+        "categoria" : "headsets",
         "precio" :  15990 ,
         "imagenes" : [
             "https://i.imgur.com/6DZfJw3.png",
