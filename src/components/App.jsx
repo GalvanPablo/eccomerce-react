@@ -5,11 +5,13 @@ import ItemListContainer from './ItemListContainer';
 
 function App() {
 	return (
-		<div className="bg-gray-100 w-full h-screen">
-			<Navbar />
-			<div className="container m-auto pt-[60px]">
-				<ItemListContainer greeting="Productos"/>
-			</div>
+		<div className="bg-gray-100 w-full min-h-screen">
+			<header>
+				<Navbar />
+			</header>
+			<main className="container m-auto pt-[60px] pb-5">
+				<ItemListContainer/>
+			</main>
 		</div>
 	);
 }
