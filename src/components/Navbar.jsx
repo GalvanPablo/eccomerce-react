@@ -27,10 +27,10 @@ function Navbar() {
                                 }
                             </ul>
                         </div>
-                    </button>
-                    <Link to="/" className="py-3 px-4 mx-2">
-                        <img src="./images/brand/logo.svg" alt="logo.svg" className="h-[32px]"/>
-                    </Link>
+                </button>
+                <Link to="/" className="py-3 px-4 mx-2">
+                    <img src="../images/brand/logo.svg" alt="logo.svg" className="h-[32px]"/>
+                </Link>
                 
                 <ul className="hidden lg:flex items-center pr-10 text-base font-semibold cursor-pointer">
                     {
