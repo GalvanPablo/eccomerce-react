@@ -13,7 +13,7 @@ const enlaces = [
 
 function Navbar() {
     return (
-        <nav className="fixed top-0 left-0 bg-white w-full shadow">
+        <nav className="fixed top-0 left-0 bg-white w-full shadow z-10">
             <div className="container m-auto flex justify-between items-center text-gray-700">
                 
 

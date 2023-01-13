@@ -9,7 +9,8 @@
             "https://i.imgur.com/BQdIOp7.png",
             "https://i.imgur.com/EQ41deE.png",
             "https://i.imgur.com/vni30RI.png"
-        ]
+        ],
+        "stock" : 20
     },
     {
         "id" : 2,
@@ -21,7 +22,8 @@
             "https://i.imgur.com/QlkWozg.png",
             "https://i.imgur.com/aHmld9x.png",
             "https://i.imgur.com/hUGrTmK.png"
-        ]
+        ],
+        "stock" : 10
     },
 
     {
@@ -33,7 +35,8 @@
         "imagenes" : [
             "https://i.imgur.com/WLeyFck.png",
             "https://i.imgur.com/zyaQEdQ.png"
-        ]
+        ],
+        "stock" : 5
     },
 
     {
@@ -47,7 +50,8 @@
             "https://i.imgur.com/026Ox0t.png",
             "https://i.imgur.com/zL7tWR5.png",
             "https://i.imgur.com/UjcVm1x.png"
-        ]
+        ],
+        "stock" : 6
     },
     {
         "id" : 5,
@@ -60,7 +64,8 @@
             "https://i.imgur.com/CM6uoz7.png",
             "https://i.imgur.com/7RKfxcF.png",
             "https://i.imgur.com/n2pN7P2.png"
-        ]
+        ],
+        "stock" : 4
     },
     {
         "id" : 6,
@@ -73,7 +78,8 @@
             "https://i.imgur.com/SCh2I3n.png",
             "https://i.imgur.com/6ITSwtW.png",
             "https://i.imgur.com/jJvgMrT.png"
-        ]
+        ],
+        "stock" : 2
     },
     {
         "id" : 7,
@@ -84,7 +90,8 @@
         "imagenes" : [
             "https://i.imgur.com/q44ykRr.png",
             "https://i.imgur.com/MBYbewi.png"
-        ]
+        ],
+        "stock" : 4
     },
 
     {
@@ -98,7 +105,8 @@
             "https://i.imgur.com/uGT73jR.png",
             "https://i.imgur.com/NdnSlTv.png",
             "https://i.imgur.com/ZxylxQW.png"
-        ]
+        ],
+        "stock" : 12
     },
     {
         "id" : 9,
@@ -110,7 +118,8 @@
             "https://i.imgur.com/nB9FvSO.png",
             "https://i.imgur.com/jWBBVob.png",
             "https://i.imgur.com/VMHnoke.png"
-        ]
+        ],
+        "stock" : 9
     },
     {
         "id" : 10,
@@ -124,6 +133,7 @@
             "https://i.imgur.com/QEvpV7B.png",
             "https://i.imgur.com/5MZVDKh.png",
             "https://i.imgur.com/bkqGUdt.png"
-        ]
+        ],
+        "stock" : 5
     }
 ]

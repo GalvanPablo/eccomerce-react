@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { HeartIcon} from '@heroicons/react/24/solid'
+import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom'
 
 function Item({producto}) {
@@ -18,10 +18,10 @@ function Item({producto}) {
                 </Link>
                 <div className="mt-5 flex gap-2 justify-between">
                     <span className="text-lg font-bold">
-                        ${producto.precio}
+                        $ {new Intl.NumberFormat('de-DE').format(producto.precio)}
                     </span>
-                    <button className="flex justify-center items-center bg-gray-800 hover:bg-gray-800/80 transition rounded-full p-1">
-                        <HeartIcon className="h-5 text-white" />
+                    <button className="flex justify-center items-center text-gray-800 hover:text-gray-800/80 transition rounded-full p-1">
+                        <ShoppingBagIcon className="h-5" />
                     </button>
                 </div>
             </div>

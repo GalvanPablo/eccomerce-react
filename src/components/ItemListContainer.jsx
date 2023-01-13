@@ -17,10 +17,7 @@ function ItemListContainer() {
     useEffect(() => {
         Block.circle('.productos', 'Cargando productos...')
         fetch("../datos/productos.json")
-        .then((respuesta) => {
-            // console.log(respuesta)
-            return respuesta.json()
-        })
+        .then((respuesta) => respuesta.json())
         .then((productos) => {
             setProductos(productos)
             setCargado(true)
