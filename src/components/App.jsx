@@ -20,7 +20,12 @@ function App() {
 					<Route path="/carrito" element={<h1 className="text-2xl font-bold text-center">Carrito</h1>} />
 					
 					
-					<Route path="*" element={<h1 className="text-2xl font-bold text-center">404</h1>} />
+					<Route path="*" element={
+						<div className="flex flex-col justify-center items-center w-full h-[80vh]">
+							<h1 className="text-2xl font-bold text-center">Página no encontrada</h1>
+							<p className="text-lg text-center">Error 404</p>
+						</div>
+					} />
 				</Routes>
 			</main>
 		</BrowserRouter>

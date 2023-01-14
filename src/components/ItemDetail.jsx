@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import ImageCarrousel from './ImageCarrousel'
 
-import {PlusIcon, MinusIcon, ShoppingBagIcon, ShoppingCartIcon} from '@heroicons/react/24/solid'
+import {PlusIcon, MinusIcon, ShoppingBagIcon, ShoppingCartIcon, ArrowLongLeftIcon} from '@heroicons/react/24/solid'
 
 function ItemDetail({producto}) {
 
@@ -19,14 +19,17 @@ function ItemDetail({producto}) {
         }
     }
 
-    console.log()
+    const volverAlListado = () => {window.history.back()}
 
     return (
         <div className="flex flex-col md:flex-row md:mt-16 md:gap-5">
+            
             <ImageCarrousel imagenes={producto.imagenes}/>
             <div className="flex flex-col gap-3 w-full md:border-l-[1px] border-gray-800/30 px-4 md:px-8">
-
-                <h2 className="text-2xl font-bold">{producto.nombre.toUpperCase()}</h2>
+                <div className="flex flex-row justify-between">
+                    <h2 className="text-2xl font-bold">{producto.nombre.toUpperCase()}</h2>
+                    <button onClick={volverAlListado} className="hidden md:flex flex-row items-center font-semibold hover:text-blue-800/80"><ArrowLongLeftIcon className="w-5"/> Volver al listado</button>
+                </div>
                 <p className="md:py-7">{producto.descripcion}</p>
                 <h3 className="text-2xl font-bold">${new Intl.NumberFormat('de-DE').format(producto.precio)}</h3>
 
