@@ -2,8 +2,23 @@ import React from 'react'
 
 import { ShoppingBagIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom'
+import { useCarrito } from './CustomProvider'
+
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 function Item({producto}) {
+
+    const carrito = useCarrito()
+
+    const handleAgregarAlCarrito = () => {
+        const resultado = carrito.agregarProducto(producto, 1)
+        if(resultado === 1 || resultado === 2){
+            Notify.success('Se ha agregado al carrito', {timeout: 2000, position: 'right-bottom'});
+        }else{
+            Notify.failure('No se ha podido agregar al carrito', {timeout: 2000, position: 'right-bottom'});
+        }
+    }
+
     return (
         <article className="bg-white text-gray-700 w-64 min-h-[8rem] shadow-lg rounded-md overflow-hidden mx-auto">
             <img src={producto.imagenes[0]} alt="" className="w-auto h-auto object-cover p-2"/>
@@ -20,9 +35,13 @@ function Item({producto}) {
                     <span className="text-lg font-bold">
                         $ {new Intl.NumberFormat('de-DE').format(producto.precio)}
                     </span>
-                    <button className="flex justify-center items-center text-gray-800 hover:text-gray-800/80 transition rounded-full p-1">
-                        <ShoppingBagIcon className="h-5" />
-                    </button>
+                    {
+                        producto.stock > 0 ?
+                            <button className="flex justify-center items-center text-gray-800 hover:text-gray-800/80 transition rounded-full p-1" onClick={handleAgregarAlCarrito}>
+                                <ShoppingBagIcon className="h-5" />
+                            </button>
+                        : null
+                    }
                 </div>
             </div>
         </article>
