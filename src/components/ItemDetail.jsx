@@ -7,6 +7,7 @@ import { useCarrito } from './CustomProvider'
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import ItemCounter from './ItemCounter'
+import { Navigate } from 'react-router-dom';
 
 function ItemDetail({producto}) {
 
@@ -14,7 +15,9 @@ function ItemDetail({producto}) {
 
     const carrito = useCarrito();
 
-    const [cantidad, setCantidad] = useState()
+    const [cantidad, setCantidad] = useState(1)
+
+    const [comprar, setComprar] = useState(false)
 
     const handleAgregarACarrito = () =>{
 
@@ -28,6 +31,19 @@ function ItemDetail({producto}) {
                 break;
             default:
                 Notify.failure('No se ha podido agregar al carrito', {timeout: 2000, position: 'right-bottom'});
+        }
+    }
+
+    const handleComprarAhora = (e) =>{
+        const respuesta = carrito.agregarProducto(producto, cantidad)
+        switch (respuesta){
+            case 1:
+            case 2:
+                console.log(e.target)
+                setComprar(true)
+                break;
+            default:
+                Notify.failure('No se ha podido continuar con la compra', {timeout: 2000, position: 'right-bottom'});
         }
     }
 
@@ -49,7 +65,7 @@ function ItemDetail({producto}) {
                     <>
                         <ItemCounter stock={producto.stock} actualizarCantidad={setCantidad}/>
                         <div className="flex flex-row gap-2 md:flex-col md:w-min">
-                            <button className="flex flex-row justify-center gap-1 bg-gray-800 py-2 w-48 m-auto rounded-lg font-semibold outline-none select-none text-white hover:bg-blue-800/80">
+                            <button onClick={handleComprarAhora} className="flex flex-row justify-center gap-1 bg-gray-800 py-2 w-48 m-auto rounded-lg font-semibold outline-none select-none text-white hover:bg-blue-800/80">
                                 <ShoppingBagIcon className="w-6"/> Comprar ahora
                             </button>
                             <button onClick={handleAgregarACarrito} className="flex flex-row justify-center gap-1 bg-gray-400 py-2 w-48 m-auto rounded-lg font-semibold outline-none select-none text-gray-800 hover:bg-blue-800/60">
@@ -60,7 +76,9 @@ function ItemDetail({producto}) {
                     : <p className="text-red-600 font-semibold">No hay stock disponible</p>
                 }
                 
-
+                {
+                    comprar ? <Navigate to="/carrito"/> : null
+                }
                 
             </div>
         </div>
