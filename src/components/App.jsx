@@ -7,6 +7,7 @@ import ItemListContainer from './ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer';
 import CustomProvider from './CustomProvider';
 import ItemCartContainer from './ItemCartContainer';
+import Checkout from './Checkout';
 
 function App() {
 	return (
@@ -21,7 +22,7 @@ function App() {
 						<Route path="/productos/:categoria" element={<ItemListContainer />} />
 						<Route path="/producto/:id" element={<ItemDetailContainer />} />
 						<Route path="/carrito" element={<ItemCartContainer/>} />
-						
+						<Route path="/checkout" element={<Checkout/>} />
 						
 						<Route path="*" element={
 							<div className="flex flex-col justify-center items-center w-full h-[80vh]">
