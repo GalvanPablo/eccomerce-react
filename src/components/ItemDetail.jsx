@@ -7,17 +7,15 @@ import { useCarrito } from './CustomProvider'
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import ItemCounter from './ItemCounter'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function ItemDetail({producto}) {
 
     const volver = () => {window.history.back()}
-
+    const Navigate = useNavigate();
     const carrito = useCarrito();
 
     const [cantidad, setCantidad] = useState(1)
-
-    const [comprar, setComprar] = useState(false)
 
     const handleAgregarACarrito = () =>{
 
@@ -40,7 +38,7 @@ function ItemDetail({producto}) {
             case 1:
             case 2:
                 console.log(e.target)
-                setComprar(true)
+                Navigate("/carrito")
                 break;
             default:
                 Notify.failure('No se ha podido continuar con la compra', {timeout: 2000, position: 'right-bottom'});
@@ -75,11 +73,6 @@ function ItemDetail({producto}) {
                     </>
                     : <p className="text-red-600 font-semibold">No hay stock disponible</p>
                 }
-                
-                {
-                    comprar ? <Navigate to="/carrito"/> : null
-                }
-                
             </div>
         </div>
     )

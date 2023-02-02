@@ -24,19 +24,16 @@ const CustomProvider = ({children}) => {
     const eliminarProducto = (producto) => {
         if(!estaEnCarrito(producto)) return false
         const auxCarrito = [...listadoCarrito]
-        const index = auxCarrito.findIndex(item => item.producto.id === producto.id)
-        auxCarrito.splice(index, 1)
+        auxCarrito.splice(auxCarrito.findIndex(item => item.producto.id === producto.id), 1)
         setListadoCarrito(auxCarrito)
         return true
     }
     const modificarCantidad = (producto, nuevaCantidad) => {
         if(!estaEnCarrito(producto)) return false
         const auxCarrito = [...listadoCarrito]
-        const index = auxCarrito.findIndex(item => item.producto.id === producto.id)
-        auxCarrito[index].cantidad = nuevaCantidad
+        auxCarrito[auxCarrito.findIndex(item => item.producto.id === producto.id)].cantidad = nuevaCantidad
         setListadoCarrito(auxCarrito)
         return true
-
     }
     const vaciarCarrito = () => {
         if(listadoCarrito.length > 0){

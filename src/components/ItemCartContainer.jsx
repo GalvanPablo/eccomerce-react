@@ -1,21 +1,20 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useCarrito } from './CustomProvider'
 import ItemList from './ItemList';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { useState } from 'react';
 
-import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 
 
 
 const ItemCartContainer = () => {
+    const Navigate = useNavigate();
     const carrito = useCarrito();
 
-    const [compraAceptada, setCompraAceptada] = useState(false)
     const handleComprar = () => {
         if(carrito.listado.length > 0){
-            setCompraAceptada(true)
+            Navigate("/checkout")
         }else{
             Notify.failure("No hay productos en el carrito", {timeout: 2000, position: 'center-center'})
         }
@@ -39,14 +38,22 @@ const ItemCartContainer = () => {
                 <div className="w-[95%] xl:w-11/12 mx-auto bg-gray-600 rounded-t-lg p-5">
                     <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center w-3/4 mx-auto">
                         <h4 className="text-white">Total <span>${new Intl.NumberFormat('de-DE').format(carrito.calcularTotal())}</span></h4>
-                        <button 
-                            onClick={handleComprar}
-                            className="flex flex-row justify-center gap-1 bg-gray-800 py-2 w-48 rounded-lg font-semibold outline-none select-none text-white hover:bg-blue-800/80"
-                        >Comprar</button>
+                        <div className="flex flex-col items-center md:flex-row gap-5">
+                            {
+                                carrito.listado.length > 0 ?
+                                <button className="text-white hover:text-red-800" onClick={carrito.vaciarCarrito}>
+                                    <TrashIcon className="w-6 h-6"/>
+                                </button>
+                                : null
+                            }
+                            <button onClick={handleComprar}
+                            className="flex flex-row justify-center gap-1 bg-gray-800 py-2 w-48 rounded-lg font-semibold outline-none select-none text-white hover:bg-blue-800/80">
+                                Confirmar Pedido
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            {compraAceptada ? <Navigate to="/checkout"/> : null}
         </div>
     )
 }
