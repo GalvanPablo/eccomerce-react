@@ -5,6 +5,7 @@
 ## Descripción
 
 E-Commerce desarrollado como proyecto final para el curso de React de Coderhouse
+
 [![Build Status](https://www.coderhouse.com/imgs/ch.svg)](https://www.coderhouse.com/online/reactjs) [:mag: Ver Demo](https://eccomerce-react-galvanpablo.vercel.app/)
 
 El sitio simula un ecommerce de audio, en el cual se puede filtrar por categoria y ver detalles del producto.
