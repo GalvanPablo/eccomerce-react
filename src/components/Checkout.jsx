@@ -45,7 +45,6 @@ const Checkout = () => {
             return
         }
         if(tarjeta.nombre === "" || tarjeta.tarjeta === "" || tarjeta.numero === ""  || tarjeta.expira.mes === 0 || tarjeta.expira.anio === 0 || tarjeta.cvv === "") {
-            console.log(tarjeta)
             Notify.warning('Datos de la tarjeta incorrectos')
             return
         }
