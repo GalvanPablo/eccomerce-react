@@ -5,6 +5,9 @@
 ## Descripción
 
 Posible futura descripción aun no desarrollada por mi intelectual persona
+E-Commerce desarrollado como proyecto final para 
+
+[![Build Status](https://www.coderhouse.com/imgs/ch.svg)](https://www.coderhouse.com/)
 
 ## Instalación y uso
 
@@ -23,7 +26,7 @@ Listado de dependencias
 - [Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.](https://tailwindcss.com/)
 - [Notiflix | a pure JavaScript library for client-side non-blocking notifications.](https://notiflix.github.io/)
 
-### Ejecutar la aplicación en el modo de desarrollo.
+### Ejecutar la aplicación en el modo de desarrollo
 
 ```bash
 npm start
