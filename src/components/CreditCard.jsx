@@ -48,12 +48,12 @@ function CreditCard({nombre, tarjeta, numero, expira, cvv}) {
                             <option value="amex" className="bg-[#0A090C]">American Express</option>
                         </select>
                     </div>
-                    <input type="text" id="name" placeholder="---------" className="font-medium tracking-widest bg-transparent" onChange={handleChangeNombre}/>
+                    <input type="text" id="name" placeholder="---------" className="font-medium bg-transparent outline-none" onChange={handleChangeNombre}/>
                 </div>
                 
                 <div className="pt-1">
                     <p className="font-light">Número</p>
-                    <input type="text" id="card" placeholder="XXXX XXXX XXXX XXXX" className="font-medium tracking-more-wider bg-transparent" onChange={handleChangeNumero}/>
+                    <input type="text" id="card" placeholder="XXXX XXXX XXXX XXXX" className="font-medium bg-transparent outline-none" onChange={handleChangeNumero}/>
                 </div>
                 
                 <div className="pt-6 pr-6">

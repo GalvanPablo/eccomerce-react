@@ -6,13 +6,15 @@ import { useCarrito } from './CustomProvider'
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { Report } from 'notiflix/build/notiflix-report-aio';
+
 import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { db } from '../firebase'
-import { Navigate } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
     const carrito = useCarrito();
-    const [transaccionRealizada, setTransaccionRealizada] = useState(false)
+    const navigate = useNavigate();
     
     const [cardNombre, setCardNombre] = useState("")
     const [cardTarjeta, setCardTarjeta] = useState("")
@@ -78,7 +80,7 @@ const Checkout = () => {
                 "Compra realizada",
                 "Su codigo de segimiento es:  " + docRef.id,
                 'Aceptar',
-                setTransaccionRealizada(true)
+                navigate("/")
             );
             
             
@@ -91,28 +93,27 @@ const Checkout = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            <form action="comprar" onSubmit={handleSubmit} className="flex flex-col">
-                <div className="flex flex-col w-80 mx-auto px-2 py-4">
-                    <div className="flex flex-row">
-                        <input type="text" className="w-2/5" id="lastname" placeholder="Apellido"/>
-                        <input type="text" className="w-3/5" id="fisrtname" placeholder="Nombre"/>
+            <h1 className="text-2xl font-bold text-center mt-3">Checkout</h1>
+            <form action="comprar" onSubmit={handleSubmit} className="flex flex-col gap-5 mt-3">
+                <div className="flex flex-col w-80 mx-auto px-2 py-4 gap-2">
+                    <div className="flex flex-row gap-3">
+                        <input type="text" id="lastname" placeholder="Apellido" className="w-2/5 border-b-[1px]"/>
+                        <input type="text" id="fisrtname" placeholder="Nombre" className="w-3/5 border-b-[1px]"/>
                     </div>
-                    <input type="email" className="" id="email" placeholder="Email"/>
-                    <input type="text" className="" id="phone" placeholder="Teléfono"/>
-                    <div className="flex flex-row">
-                        <input type="text" className="w-4/5" id="address" placeholder="Dirección"/>
-                        <input type="text" className="w-1/5 text-center" id="zip" placeholder="CP"/>
+                    <input type="email" id="email" placeholder="Email" className="border-b-[1px]"/>
+                    <input type="text" id="phone" placeholder="Teléfono" className="border-b-[1px]"/>
+                    <div className="flex flex-row gap-3">
+                        <input type="text" id="address" placeholder="Dirección" className="w-4/5 border-b-[1px]"/>
+                        <input type="text" id="zip" placeholder="CP" className="w-1/5 border-b-[1px]"/>
                     </div>
                 </div>
 
                 <CreditCard nombre={setCardNombre} tarjeta={setCardTarjeta} numero={setCardNumero} expira={setCardExpira} cvv={setCardCvv}/>
 
-                <p>Total: ${new Intl.NumberFormat('de-DE').format(carrito.calcularTotal())}</p>
-
-                <input type="submit" value="Finalizar Compra" className="m-5"/>
+                <div className="fixed bottom-0 left-0 w-full flex justify-center">
+                    <input type="submit" value={"Pagar $" + new Intl.NumberFormat('de-DE').format(carrito.calcularTotal())} className="w-11/12 py-6 bg-gray-800 rounded-t-lg font-semibold outline-none select-none text-white hover:bg-blue-800/80"/>
+                </div>
             </form>
-            {transaccionRealizada? <Navigate to={"/"} /> : null}
         </>
     )
 }
