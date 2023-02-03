@@ -17,16 +17,19 @@ function CreditCard({nombre, tarjeta, numero, expira, cvv}) {
         numero(e.target.value)
     }
 
-    const [mes, setMes] = useState(0)
-    const [anio, setAnio] = useState(0)
+    const [caducidad, setCaducidad] = useState({mes: 0, anio: 0})
 
-    const handleChangeExpira = (e) => {
-        if (e.target.id === "monthExpire") {
-            setMes(parseInt(e.target.value))
-        } else if (e.target.id === "yearExpire") {
-            setAnio(parseInt(e.target.value))
-        }
-        expira({mes, anio})
+    const handleChangeMonth = (e) => {
+        const aux = {...caducidad}
+        aux.mes = parseInt(e.target.value)
+        setCaducidad(aux)
+        expira(aux)
+    }
+    const handleChangeYear = (e) => {
+        const aux = {...caducidad}
+        aux.anio = parseInt(e.target.value)
+        setCaducidad(aux)
+        expira(aux)
     }
 
     const handleChangeCvv = (e) => {
@@ -34,7 +37,7 @@ function CreditCard({nombre, tarjeta, numero, expira, cvv}) {
     }
     
     return (
-        <div className="w-80 h-52 m-auto bg-red-100 rounded-xl relative text-white">
+        <div className="w-80 h-52 mx-auto bg-red-100 rounded-xl relative text-white">
             <img src="../images/etc/card_bg.svg" alt="" className="relative object-cover w-full h-full rounded-xl"/>
 
             <div className="w-full px-8 absolute top-5">
@@ -58,16 +61,16 @@ function CreditCard({nombre, tarjeta, numero, expira, cvv}) {
                 
                 <div className="pt-6 pr-6">
                     <div className="flex justify-between">
-                        <div className="" onChange={handleChangeExpira}>
+                        <div>
                             <p className="font-light text-xs">Expirá</p>
-                            <select name="mes" id="monthExpire" className="bg-transparent">
+                            <select name="mes" id="monthExpire" className="bg-transparent" onChange={handleChangeMonth}>
                                 <option value="-" className="bg-[#303030]">--</option>
                                 {
                                     [...Array(12).keys()].map((item, index) => <option key={index} value={item+1} className="bg-[#494949]">{item+1}</option>)
                                 }
                             </select>
                             /
-                            <select name="año" id="yearExpire" className="bg-transparent">
+                            <select name="año" id="yearExpire" className="bg-transparent" onChange={handleChangeYear}>
                                 <option value="-" className="bg-[#303030]">----</option>
                                 {
                                     [...Array(10).keys()].map((item, index) => <option key={index} value={item+actualAnio} className="bg-[#494949]">{item+actualAnio}</option>)

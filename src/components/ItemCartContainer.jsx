@@ -37,7 +37,7 @@ const ItemCartContainer = () => {
             <div className="fixed bottom-0 left-0 w-full z-10">
                 <div className="w-[95%] xl:w-11/12 mx-auto bg-gray-600 rounded-t-lg p-5">
                     <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between items-center w-3/4 mx-auto">
-                        <h4 className="text-white">Total <span>${new Intl.NumberFormat('de-DE').format(carrito.calcularTotal())}</span></h4>
+                        <h4 className="text-white text-lg font-medium">Total <span>${new Intl.NumberFormat('de-DE').format(carrito.calcularTotal())}</span></h4>
                         <div className="flex flex-col items-center md:flex-row gap-5">
                             {
                                 carrito.listado.length > 0 ?

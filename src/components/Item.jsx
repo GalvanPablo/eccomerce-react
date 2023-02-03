@@ -11,6 +11,10 @@ function Item({producto}) {
     const carrito = useCarrito()
 
     const handleAgregarAlCarrito = () => {
+        if(carrito.estaEnCarrito(producto)){
+            Notify.info('El producto ya se encuentra en el carrito', {timeout: 2000, position: 'right-bottom'})
+            return
+        }
         const resultado = carrito.agregarProducto(producto, 1)
         if(resultado === 1 || resultado === 2){
             Notify.success('Se ha agregado al carrito', {timeout: 2000, position: 'right-bottom'});

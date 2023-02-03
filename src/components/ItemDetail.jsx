@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 function ItemDetail({producto}) {
 
     const volver = () => {window.history.back()}
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
     const carrito = useCarrito();
 
     const [cantidad, setCantidad] = useState(1)
@@ -37,8 +37,7 @@ function ItemDetail({producto}) {
         switch (respuesta){
             case 1:
             case 2:
-                console.log(e.target)
-                Navigate("/carrito")
+                navigate("/carrito")
                 break;
             default:
                 Notify.failure('No se ha podido continuar con la compra', {timeout: 2000, position: 'right-bottom'});

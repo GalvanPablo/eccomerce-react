@@ -16,7 +16,6 @@ function ItemListContainer() {
     const [productos, setProductos] = useState([])
 
     const detallesVisualizacion = useParams()
-    // console.log(detallesVisualizacion)
 
     useEffect(() => {
         Block.circle('.productos', 'Cargando productos...')
@@ -30,15 +29,6 @@ function ItemListContainer() {
             
             Block.remove('.productos')
         })
-
-        // fetch("../datos/productos.json")
-        // .then((respuesta) => respuesta.json())
-        // .then((productos) => {
-        //     setProductos(productos)
-        //     setCargado(true)
-        //     Block.remove('.productos')
-        // })
-        // .catch((error) => console.error(error))
     }, [detallesVisualizacion])
 
 
